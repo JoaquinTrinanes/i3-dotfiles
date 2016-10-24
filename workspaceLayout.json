@@ -1,0 +1,25 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 436,
+       "width": 735,
+       "x": 0,
+       "y": 0
+    },
+    "name": "joaquin@joaquin-Ubuntu: ~",
+    "percent": 1,
+    "swallows": [
+       {
+       // "class": "^Gnome\\-terminal$",
+       // "instance": "^gnome\\-terminal\\-server$",
+       // "title": "^joaquin\\@joaquin\\-Ubuntu\\:\\ \\~$",
+       // "transient_for": "^$",
+       // "window_role": "^gnome\\-terminal\\-window\\-ddf21d25\\-6168\\-4b62\\-b644\\-7c443b466ef7$"
+       }
+    ],
+    "type": "con"
+}
+
