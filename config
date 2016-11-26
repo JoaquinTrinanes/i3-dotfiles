@@ -1,3 +1,4 @@
+#notificaciones: 'notifyosdconf'
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -15,11 +16,12 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
+set
 
-
-font pango:FontAwesome 10
+font pango:FontAwesome 9
 #font pango:DejaVu Sans Mono 8
-new_window pixel 3
+new_window pixel 2
+#new_window normal
 new_float normal
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -43,111 +45,114 @@ exec_always feh --bg-scale /home/joaquin/Pictures/wallpaper.jpg
 exec_always compton -f
 
 
-# use Mouse+Mod1 to drag floating windows to their wanted position
-floating_modifier Mod1
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier mod1
 
 # start a terminal
-bindsym Mod1+Return exec i3-sensible-terminal
+bindsym mod1+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym Mod1+Shift+q kill
+bindsym mod1+Shift+q kill
 
 #colors
-
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
+#bgcolor2f343f#073642
+#textcolor#f3f4f5
+#676E7D
+#urgent#E53935#cb4b16
+set $bg-color 	         #073642
+set $inactive-bg-color   #073642
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color #E53935
+set $urgent-bg-color #cb4b16
 
 
 # start dmenu (a program launcher)
-bindsym Mod1+d exec rofi -show run -lines 3 -eh 2 -width 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "DejaVu Sans Condensed Bold 18" -rnow -run-command "bash -i -c '{cmd}'"
+bindsym mod1+d exec rofi -show run -lines 3 -eh 2 -width 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "DejaVu Sans Condensed Bold 18" -rnow -run-command "bash -i -c '{cmd}'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
+# bindsym mod1+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym Mod1+$left focus left
-bindsym Mod1+$down focus down
-bindsym Mod1+$up focus up
-bindsym Mod1+$right focus right
+bindsym mod1+$left focus left
+bindsym mod1+$down focus down
+bindsym mod1+$up focus up
+bindsym mod1+$right focus right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Left focus left
-bindsym Mod1+Down focus down
-bindsym Mod1+Up focus up
-bindsym Mod1+Right focus right
+bindsym mod1+Left focus left
+bindsym mod1+Down focus down
+bindsym mod1+Up focus up
+bindsym mod1+Right focus right
 
 # move focused window
-bindsym Mod1+Shift+$left move left
-bindsym Mod1+Shift+$down move down
-bindsym Mod1+Shift+$up move up
-bindsym Mod1+Shift+$right move right
+bindsym mod1+Shift+$left move left
+bindsym mod1+Shift+$down move down
+bindsym mod1+Shift+$up move up
+bindsym mod1+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Shift+Left move left
-bindsym Mod1+Shift+Down move down
-bindsym Mod1+Shift+Up move up
-bindsym Mod1+Shift+Right move right
+bindsym mod1+Shift+Left move left
+bindsym mod1+Shift+Down move down
+bindsym mod1+Shift+Up move up
+bindsym mod1+Shift+Right move right
 
 # split in horizontal orientation
-bindsym Mod1+h split h
+bindsym mod1+h split h
 
 # split in vertical orientation
-bindsym Mod1+v split v
+bindsym mod1+v split v
 
 # enter fullscreen mode for the focused container
-bindsym Mod1+f fullscreen toggle
+bindsym mod1+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+s layout stacking
-bindsym Mod1+w layout tabbed
-bindsym Mod1+e layout toggle split
+bindsym mod1+s layout stacking
+bindsym mod1+w layout tabbed
+bindsym mod1+e layout toggle split
 
 # toggle tiling / floating
-bindsym Mod1+Shift+space floating toggle
+bindsym mod1+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym Mod1+space focus mode_toggle
+bindsym mod1+space focus mode_toggle
 
 # focus the parent container
-bindsym Mod1+a focus parent
+bindsym mod1+a focus parent
 
 # focus the child container
-#bindsym Mod1+d focus child
+#bindsym mod1+d focus child
 
 # move the currently focused window to the scratchpad
-bindsym Mod1+Shift+minus move scratchpad
+bindsym mod1+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym Mod1+minus scratchpad show
+bindsym mod1+minus scratchpad show
 
 # switch to workspace
-bindsym Mod1+1 workspace "1 "
-bindsym Mod1+2 workspace "2 "
-bindsym Mod1+3 workspace "3 "
-bindsym Mod1+4 workspace "4 "
-bindsym Mod1+5 workspace "5 "
-bindsym Mod1+6 workspace "6 "
-bindsym Mod1+7 workspace "7 "
-bindsym Mod1+8 workspace 8
-bindsym Mod1+9 workspace 9
-bindsym Mod1+0 workspace 10
+bindsym mod1+1 workspace "1 "
+bindsym mod1+2 workspace "2 "
+bindsym mod1+3 workspace "3 "
+bindsym mod1+4 workspace "4 "
+bindsym mod1+5 workspace "5 "
+bindsym mod1+6 workspace "6 "
+bindsym mod1+7 workspace "7 "
+bindsym mod1+8 workspace 8
+bindsym mod1+9 workspace 9
+bindsym mod1+0 workspace 10
 
 # move focused container to workspace
-bindsym Mod1+Shift+1 move container to workspace "1 "
-bindsym Mod1+Shift+2 move container to workspace "2 "
-bindsym Mod1+Shift+3 move container to workspace "3 "
-bindsym Mod1+Shift+4 move container to workspace "4 "
-bindsym Mod1+Shift+5 move container to workspace "5 "
-bindsym Mod1+Shift+6 move container to workspace "6 "
-bindsym Mod1+Shift+7 move container to workspace "7"
-bindsym Mod1+Shift+8 move container to workspace 8
-bindsym Mod1+Shift+9 move container to workspace 9
-bindsym Mod1+Shift+0 move container to workspace 10
+bindsym mod1+Shift+1 move container to workspace "1 "
+bindsym mod1+Shift+2 move container to workspace "2 "
+bindsym mod1+Shift+3 move container to workspace "3 "
+bindsym mod1+Shift+4 move container to workspace "4 "
+bindsym mod1+Shift+5 move container to workspace "5 "
+bindsym mod1+Shift+6 move container to workspace "6 "
+bindsym mod1+Shift+7 move container to workspace "7"
+bindsym mod1+Shift+8 move container to workspace 8
+bindsym mod1+Shift+9 move container to workspace 9
+bindsym mod1+Shift+0 move container to workspace 10
 
 
 
@@ -164,27 +169,29 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
-
-#for_window [class="Google Play"] move to workspace "5 "
-for_window [title="Google"] move to workspace "3 "
+for_window [class="google play music desktop player"] move to workspace "5 "
+for_window [class="Google Play Music Desktop Player"] move to workspace "5 "
+for_window [class="google-chrome"] move to workspace "3 "
+for_window [class="Google-chrome"] move to workspace "3 "
 for_window [class="Steam"] move to workspace "6 "
+for_window [class="Atom"] move to workspace "2 "
 
 #autostart
 #exec --no-startup-id pasystray
 exec --no-startup-id i3-msg 'exec volumeicon'
 exec --no-startup-id i3-msg 'workspace "1 "; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace "2 ";layout tabbed; exec thunar /home/joaquin/Documents;exec thunar /home/joaquin/NetBeansProjects'
+exec --no-startup-id i3-msg 'workspace "2 "; exec atom'
 exec --no-startup-id i3-msg 'workspace "3 "; exec google-chrome'
 exec --no-startup-id i3-msg 'workspace "4 "; exec thunar'
 #exec --no-startup-id i3-msg 'workspace "5 "; exec google-play-music-desktop-player'
 exec --no-startup-id i3-msg 'exec nm-applet'
 
 # reload the configuration file
-bindsym Mod1+Shift+c reload
+bindsym mod1+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+Shift+r restart
+bindsym mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to quit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym mod1+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to quit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
 
@@ -212,7 +219,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym Mod1+r mode "resize"
+bindsym mod1+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -245,9 +252,9 @@ exec i3-config-wizard
 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up
-bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down
-bindsym XF86AudioMute exec --no-startup-id pulseaudio-ctl mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pulseaudio-ctl mute && pkill -RTMIN+1 i3blocks
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -257,28 +264,37 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-#bindsym Mod1+Home exec playerctl play-pause
-bindsym Mod1+Home exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+#CON TECLA FN
+#bindsym mod1+Home exec playerctl play-pause
+#bindsym mod1+Home exec playerctl play-pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
 
+#SIN TECLA FN
+bindsym Home exec playerctl play-pause
+bindsym End exec playerctl next
+bindsym Next exec playerctl previous
 
 #Gaps
-smart_borders on
-smart_gaps on
-gaps inner 6
-gaps outer 2
-workspace "3 " gaps inner 0
-workspace "3 " gaps outer 0
+#smart_borders on
+#smart_gaps on
+#gaps inner 6
+#gaps outer 2
+#workspace "3 " gaps inner 0
+#workspace "3 " gaps outer 0
 
 
 #caps and num lock
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 #bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
-
-
 #lock
-bindsym Mod1+p exec ~/.i3/lock.sh
-exec_always xautolock -time 3 -secure -locker /home/joaquin/.i3/lockAuto.sh
-#-secure fue quitado
+bindsym mod1+p exec ~/.i3/lock.sh
+exec_always xautolock -time 3 -locker /home/joaquin/.i3/lock.sh
+
+#para el num y caps
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+#menu de apagado y demás
+bindsym mod1+o exec ~/.i3/shutdown_menu/shutdown_menu -c
